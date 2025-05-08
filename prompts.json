@@ -4,7 +4,7 @@
   "zh_tw_force": "請務必用繁體中文回答。",
   "zh_tw_user_suffix": "（請用繁體中文回答）",
   "image_user": "請描述這張圖：（請用繁體中文回答）",
-  "reset_cmds": ["清除對話", "/reset", "reset", "清空對話"],
+  "reset_cmds": ["/reset", "reset"],
   "reset_reply": "已清除對話紀錄！",
   "api_error": "LM Studio API 發生錯誤，請稍後再試。",
   "image_error": "LM Studio API 圖片辨識失敗。",

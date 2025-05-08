@@ -1,12 +1,20 @@
 # LineBot 多模態助理
 
-本專案是一個支援多模態（文字+圖片）對話的 LINE Bot，整合本地 LM Studio API，所有提示詞皆集中於 `prompts.json` 管理。
+本專案是一個支援多模態（文字+圖片）對話的 LINE Bot，整合本地 LM Studio API，所有提示詞皆集中於 `prompts.json` 管理，並採用模組化結構方便擴充。
 
 ## 主要功能
 - 支援 LINE 文字與圖片訊息
 - 圖片自動存放於 `upload/image/用戶ID/`
 - 所有提示詞、指令、語言要求、錯誤訊息皆集中於 `prompts.json`
-- 對話紀錄自動記錄於 `chat_log.csv`
+- 對話紀錄自動記錄於 SQLite 資料庫 `chat_log.db`
+- 程式碼高度模組化，方便擴充與維護
+
+## 專案結構說明
+- `app.py`：主程式入口，負責初始化、載入設定、啟動伺服器
+- `db.py`：資料庫操作（初始化、寫入對話紀錄）
+- `line_handlers.py`：LINE Bot 事件處理（文字、圖片訊息）
+- `lm_api.py`：呼叫 LM Studio API（可自行擴充或更換 API）
+- `prompts.json`：所有提示詞、指令、錯誤訊息集中管理
 
 ## 安裝步驟
 
@@ -38,8 +46,9 @@
 ```
 
 ## 注意事項
-- 請勿將 `.env`、`upload/`、`chat_log.csv` 等敏感或大量檔案加入版本控制
+- 請勿將 `.env`、`upload/`、`chat_log.db` 等敏感或大量檔案加入版本控制
 - 所有提示詞請於 `prompts.json` 管理
+- 若要擴充或更換 API，只需修改 `lm_api.py`，不需動到主程式
 
 ## License
 MIT 
