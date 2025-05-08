@@ -27,5 +27,4 @@ upload/
 Thumbs.db
 
 # 測試/日誌
-chat_log.csv 
 /chat_log.db
