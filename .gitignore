@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# dotenv
+.env
+
+# 上傳圖片與暫存檔
+upload/
+*.jpg
+*.png
+
+# 作業系統
+.DS_Store
+Thumbs.db
+
+# 測試/日誌
+chat_log.csv 
